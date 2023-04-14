@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 @Service
 @Slf4j
 public class KafkaConsumerService {
-    @KafkaListener(topics = "testTopic", groupId = "testGroup", containerFactory = "kafkaListener")
+    @KafkaListener(topics = "testTopic", groupId = "testgroup", containerFactory = "kafkaListener")
     public void consume(ChatMessageDTO chatMessageDTO) {
         log.warn("보낸 이: " + chatMessageDTO.getSender());
         log.warn("메시지: " + chatMessageDTO.getContext());
